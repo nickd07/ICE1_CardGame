@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package card;
 
 /**
- * Student NAme: Nick Damor
- * Student Number : 991781470
+ * Student Name: Nick Damor
+ * Student Number: 991781470
  * A class that fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
- * for the match to the user's card. To be used as starting code in ICE 1
+ * for the match to the user's card. This code is completed for ICE 1.
  * @author srinivsi
  */
 public class CardTrick {
@@ -32,7 +28,7 @@ public class CardTrick {
         System.out.print("Enter a card value (1-13): ");
         int userValue = scanner.nextInt();
         System.out.print("Enter a suit (Hearts, Diamonds, Spades, Clubs): ");
-        String userSuit = scanner.next();
+        String userSuit  = scanner.next();
         
         Card userCard = new Card();
         userCard.setValue(userValue);  // set user's card value
@@ -55,10 +51,10 @@ public class CardTrick {
             System.out.println("Sorry! Your card is not in the magic hand.");
         }
         
-        // Add a lucky card (2 of Clubs)
+        // Add a lucky card (3 of Spades)
         Card luckyCard = new Card();
-        luckyCard.setValue(2);  // hardcoded lucky card value
-        luckyCard.setSuit("Clubs");  // hardcoded lucky card suit
+        luckyCard.setValue(3);  // hardcoded lucky card value
+        luckyCard.setSuit("Spades");  // hardcoded lucky card suit
         
         // Check if lucky card is in magic hand
         boolean luckyFound = false;
@@ -72,7 +68,7 @@ public class CardTrick {
         
         // Report if lucky card was found
         if (luckyFound) {
-            System.out.println("Lucky card (2 of Clubs) found in the magic hand!");
+            System.out.println("Lucky card (3 of Spades) found in the magic hand!");
         } else {
             System.out.println("Lucky card not found in the magic hand.");
         }
@@ -81,7 +77,7 @@ public class CardTrick {
         System.out.println("Magic Hand contains:");
         for (Card c : magicHand)
         {
-            System.out.println(c);  // print each card in magic hand
+            System.out.println(c.getValue() + " of " + c.getSuit());  // print each card in magic hand
         }
     }
 }
